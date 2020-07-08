@@ -1,3 +1,5 @@
+{{config (materilized='view') }}
+
 with region as
 (
 select * from {{ ref('region') }}
