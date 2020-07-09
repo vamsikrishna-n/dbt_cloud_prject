@@ -1,0 +1,33 @@
+
+version: 2
+
+models:
+  - name: customer
+    description: "Customer Details (like Name, Address, account balance, phone no,etc..) are captured in this table."
+    columns:
+      - name: C_CUSTKEY
+        description: "Primary Key"
+        tests:
+          - unique
+          - not_null
+
+      - name: C_NATIONKEY
+        description: "Foreign Key relation with Nation.N_NATIONKEY field"
+        tests:
+          - relationships:
+              to: ref('nation')
+              field: N_NATIONKEY
+
+  - name: nation
+    columns:
+      - name: N_NATIONKEY
+        description: "Primary Key"
+        tests:
+          - unique
+          - not_null
+      - name: N_REGIONKEY
+        description: "Foreign Key relation with region.R_REGIONKEY field"
+        tests:
+          - relationships:
+              to: ref('region')
+              field: R_REGIONKEY
