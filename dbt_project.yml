@@ -4,6 +4,7 @@
 # name or the intended use of these models
 name: 'my_cloud_project'
 version: '1.0.0'
+config-version: 2  # included this line for materialization
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'my_cloud_project'
@@ -34,8 +35,12 @@ models:
   my_cloud_project:
       TPCH_SF:
         +materialized: table
+        custom_aliases_schema_db:
+          +database: custom_db
         source:
           materialized: view
+        transformations:
+          +schema: transformations
 
       # Applies to all files under models/example/
       example:
