@@ -256,7 +256,7 @@ print(formated_query)
 
 
 
-### Some use full links ###
+### Some useful links ###
 #   https://changhsinlee.com/pyderpuffgirls-ep5/
 #   https://ttl255.com/jinja2-tutorial-part-1-introduction-and-variable-substitution/
 #   https://overiq.com/flask-101/basics-of-jinja-template-language/
