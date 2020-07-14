@@ -1,0 +1,14 @@
+version: 2
+
+seeds:
+  - name: country_codes
+    description: A mapping of two letter country codes to country names
+    columns:
+      - name: name
+        tests:
+          - unique
+          - not_null
+      - name: code
+        tests:
+          - unique
+          - not_null
